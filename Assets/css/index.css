@@ -2,6 +2,10 @@ body{
     margin: 0px;
 }
 
+@font-face {
+    font-family: Nixie;
+    src: url(/Assets/police/NixieOne-Regular.ttf);
+  }
 
 /****************** Header **********************/
 
@@ -10,21 +14,23 @@ header{
     padding: 2em;
 }
 
-
 nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
     border-radius: 2em;
+    height: 10vh;
 }
 
 nav img{
     max-width: 40vw;
+    max-height: 12.5vh;
 }
 
 nav a{
     color: black;
+    font-family: "Nixie";
     /* Trick : set a transparent underline that appear progressivly on focus*/
     text-decoration: underline 0.05em #00000000;
     transition: text-decoration-color 700ms;
@@ -37,4 +43,11 @@ nav a:hover, nav a:focus{
 
 
 
+/**************** Media Query ************************/
 
+
+@media (max-width: 786px){
+    nav a{
+        display: none;
+    }
+}
