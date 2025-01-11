@@ -1,5 +1,6 @@
 body{
     margin: 0px;
+    background-color: #212121;
 }
 
 @font-face {
@@ -41,13 +42,67 @@ nav a:hover, nav a:focus{
     text-decoration-color: #000000ff;
 }
 
+#nav-ul{
+    display: flex;
+    gap: 10vw;
+    list-style-type: none;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+
+
+#burger-menu {
+    font-size: 2em;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes slide-in{
+    0%{
+        transform: translateX(110%);
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
 
 
 /**************** Media Query ************************/
 
 
-@media (max-width: 786px){
-    nav a{
-        display: none;
+@media (max-width: 787px){
+    body{
+        /* Prevent horizontal scrolling that animation can cause */
+        overflow-x: hidden;
+    }
+
+
+    #burger-menu{
+        display: block;
+    }
+
+    #nav-ul{
+        flex-direction: column;
+        position: absolute;
+        background-color: #ffffff;
+        border-radius: 1em;
+        padding: 1em;
+        box-shadow: 0 4px 6px #00000080;
+        animation-fill-mode: forwards;
+        top: 12vh;
+        right: 2vw;
+    }
+
+    .slide-in{
+        animation: slide-in 1s;
+    }
+
+    .slide-out{
+        animation: slide-in 1s reverse
     }
 }
