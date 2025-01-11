@@ -2,6 +2,7 @@
 
 const burgerButton = document.getElementById('burger-menu');
 const linkUl = document.getElementById('nav-ul');
+
 burgerButton.addEventListener('click', () => {
     if(linkUl.classList.contains('slide-in')){
         // replacement of void linkUl.offsetWidth, force the DOM and prevent optimisation
