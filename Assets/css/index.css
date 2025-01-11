@@ -11,7 +11,7 @@ body{
 /****************** Header **********************/
 
 header{
-    background-color: #b0bec5;
+    background-color: #f1f6f8;
     padding: 2em;
 }
 
@@ -22,11 +22,12 @@ nav{
     background-color: #ffffff;
     border-radius: 2em;
     height: 10vh;
+    box-shadow: -4px 4px 4px #00000080;
 }
 
 nav img{
     max-width: 40vw;
-    max-height: 12.5vh;
+    max-height: 10vh;
 }
 
 nav a{
@@ -34,12 +35,15 @@ nav a{
     font-family: "Nixie";
     /* Trick : set a transparent underline that appear progressivly on focus*/
     text-decoration: underline 0.05em #00000000;
-    transition: text-decoration-color 700ms;
+    transition: all 1s;
     font-size: 2em;
+    padding: 0.2em;
+    border-radius: 1em;
 }
 
 nav a:hover, nav a:focus{
-    text-decoration-color: #000000ff;
+    background-color: #d6dde0;
+    color: #d32f2f;
 }
 
 #nav-ul{
