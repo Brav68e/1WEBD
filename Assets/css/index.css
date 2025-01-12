@@ -9,7 +9,7 @@ body{
     src: url(/Assets/police/NixieOne-Regular.ttf);
   }
 
-/****************** Header **********************/
+/*********************** Header **********************/
 
 header{
     background-color: #f1f6f8;
@@ -73,7 +73,54 @@ nav a:hover, nav a:focus{
     }
 }
 
-/**************** Footer ************************/
+
+/********************* Main ************************/
+
+main{
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+    gap: 6em;
+}
+
+
+article{
+    justify-content: stretch;
+    align-content: stretch;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+    max-width: 80vw;
+    background-color: #d32f2f;
+    border-radius: 2em;
+    transition: all 0.5s ease-in-out;
+}
+
+article div+div{
+    margin: 1em;
+    font-size: x-large;
+}
+
+article img{
+    border-radius: 1em;
+}
+
+
+article a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+
+article:hover, article:has(a:focus){
+    box-shadow: 1em 1em ;
+    transform: translateY(-1em);
+}
+
+
+/********************* Footer ************************/
 
 footer{
     display: flex;
@@ -121,5 +168,13 @@ footer p{
 
     .slide-out{
         animation: slide-in 1s reverse
+    }
+
+    main{
+        grid-template-columns: 1fr;
+    }
+
+    article{
+        flex-direction: column;
     }
 }
