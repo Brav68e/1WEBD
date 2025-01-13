@@ -200,6 +200,7 @@ footer p{
         padding: 1em;
         box-shadow: 0 4px 6px #00000080;
         animation-fill-mode: forwards;
+        z-index: 1;
         top: 12vh;
         right: 2vw;
     }

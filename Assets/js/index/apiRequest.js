@@ -33,10 +33,11 @@ export async function displayFilms(main, films){
     for(let i=0; i<films.length; i++){
         let film = films[i]
         let article = document.createElement("article")
+        article.setAttribute('id', `${film['imdbID']}`)
         article.innerHTML = `
         <div>
             <h2>${film['Title']}</h2>
-            <img src=${film['Poster']} alt=${film['Title']}>
+            <img src=${film['Poster']} alt="${film['Title']}">
         </div>
         <div>
             <p>${film['Plot']}</p>
