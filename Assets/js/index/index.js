@@ -60,7 +60,7 @@ let additionalFilms = ['count', 'trap', 'fall', 'alien', 'bad', 'despicable'];
 const main = document.querySelector('main');
 const section = document.querySelector('section')
 const button = document.getElementById('loadMore')
-displayFilms(main, films)
+await displayFilms(main, films)
 
 
 button.addEventListener('click', async() => {
@@ -75,4 +75,13 @@ button.addEventListener('click', async() => {
 })
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// SHOW MORE TRANSITION Related instructions
 
+import { storeID_onClick } from "../passerelle.js";
+
+const articles = document.querySelectorAll("article");
+const buttons = main.querySelectorAll("a");
+
+storeID_onClick(buttons, articles);
