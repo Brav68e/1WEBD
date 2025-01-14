@@ -29,7 +29,6 @@ export function hidden_burger(window, linkUl){
     window.addEventListener('resize', () => {
         if(window.innerWidth > 786){
                 linkUl.style.display = "flex"
-                console.log("feur")
             }
             else{
                 linkUl.style.display = "none"
