@@ -13,6 +13,19 @@ hidden_burger(window, Ul)                                                       
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+// SHOW MORE TRANSITION Related instructions
+
+import { storeID_onClick } from "../general/passerelle.js";
+
+const main = document.querySelector('main');
+const articles = document.querySelectorAll("article");
+const buttons = main.querySelectorAll("a");
+
+storeID_onClick(buttons, articles);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 // API Related instructions
 
 
@@ -22,7 +35,6 @@ let films = ['absolution', 'wicked', 'sonic', 'lift'];
 // Additional films
 let additionalFilms = ['count', 'trap', 'fall', 'alien', 'bad', 'despicable'];
 
-const main = document.querySelector('main');
 const section = document.querySelector('section')
 const button = document.getElementById('loadMore')
 await displayFilms(main, films)
@@ -37,16 +49,12 @@ button.addEventListener('click', async() => {
     await displayFilms(main, additionalFilms)
     // Remove the temporary loading
     section.removeChild(loader)
+
+    // Readd Storing ID on every a
+    const articles = document.querySelectorAll("article");
+    const buttons = main.querySelectorAll("a");
+    storeID_onClick(buttons, articles);
 })
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// SHOW MORE TRANSITION Related instructions
 
-import { storeID_onClick } from "../general/passerelle.js";
-
-const articles = document.querySelectorAll("article");
-const buttons = main.querySelectorAll("a");
-
-storeID_onClick(buttons, articles);

@@ -79,8 +79,28 @@ nav a:hover, nav a:focus{
 article{
     background-color: #d32f2f;
     justify-self: center;
+    border-radius: 1em;
+    margin: 0.5em;
+    padding: 0.5em; 
+    text-align: center;
+    font-size: large;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
+
+article img{
+    border-radius: 1em;
+}
+
+article > div > div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 300px;
+    justify-self: center;
+    column-gap: 1em;
+}
 
 
 

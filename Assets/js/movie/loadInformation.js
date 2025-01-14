@@ -11,9 +11,11 @@ export async function loadCard(filmID, container){
         <h1>${result['Title']}</h1>
         <div>
             <img src = ${result['Poster']}>
-            <p>${result['Genre']}</p>
-            <p>${result['Runtime']}</p>
-            <p>${result['Metascore']}</p>
+            <div>
+                <p>${result['Genre']}</p>
+                <p>${result['Runtime']}</p>
+                <p>⭐${result['Metascore']} Metascore</p>
+            </div>
         </div>
         <div>
             <h2>Synopsis :</h2>
