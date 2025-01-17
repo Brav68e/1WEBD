@@ -13,31 +13,30 @@ hidden_burger(window, Ul)                                                       
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// SHOW MORE TRANSITION Related instructions
-
-import { storeID_onClick } from "../general/passerelle.js";
-
-const main = document.querySelector('main');
-const articles = document.querySelectorAll("article");
-const buttons = main.querySelectorAll("a");
-
-storeID_onClick(buttons, articles);
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
 // API Related instructions
 
 
 import { loadFilms, displayFilms } from "./apiRequest.js";
+import { storeID_onClick } from "../general/passerelle.js";
+
 // Default films
 let films = ['absolution', 'wicked', 'sonic', 'lift'];
 // Additional films
 let additionalFilms = ['count', 'trap', 'fall', 'alien', 'bad', 'despicable'];
 
+
 const section = document.querySelector('section')
 const button = document.getElementById('loadMore')
+const main = document.querySelector('main');
+
+// Display the 4 first films
 await displayFilms(main, films)
+
+const articles = document.querySelectorAll("article");
+const buttons = main.querySelectorAll("a");
+
+// Add the binding to them
+storeID_onClick(buttons, articles);
 
 
 button.addEventListener('click', async() => {
