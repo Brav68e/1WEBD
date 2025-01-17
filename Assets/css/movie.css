@@ -1,0 +1,178 @@
+body{
+    margin: 0px;
+    background-color: #212121;
+    font-family: "Nixie";
+}
+
+@font-face {
+    font-family: Nixie;
+    src: url(/Assets/police/NixieOne-Regular.ttf);
+  }
+
+/*********************** Header **********************/
+
+header{
+    background-color: #f1f6f8;
+    padding: 2em;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 2em;
+    height: 10vh;
+    box-shadow: -4px 4px 4px #00000080;
+}
+
+nav img{
+    max-width: 40vw;
+    max-height: 10vh;
+}
+
+nav a{
+    color: black;
+    /* Trick : set a transparent underline that appear progressivly on focus*/
+    text-decoration: underline 0.05em #00000000;
+    transition: all 1s;
+    font-size: 2em;
+    padding: 0.2em;
+    border-radius: 1em;
+}
+
+nav a:hover, nav a:focus{
+    background-color: #d6dde0;
+    color: #d32f2f;
+}
+
+#nav-ul{
+    display: flex;
+    gap: 10vw;
+    list-style-type: none;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+
+
+#burger-menu {
+    font-size: 2em;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes slide-in{
+    0%{
+        transform: translateX(110%);
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
+/********************* Main ************************/
+
+article{
+    background: linear-gradient(135deg, rgba(97,34,34,1) 0%, rgba(176,21,21,1) 35%, rgba(176,21,21,1) 65%, rgba(97,34,34,1) 100%);
+    justify-self: center;
+    border-radius: 1em;
+    margin: 0.5em;
+    padding: 1em; 
+    font-size: large;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: #d6dde0;
+}
+
+.description{
+    font-size: x-large
+}
+
+article h1{
+    text-align: center;
+}
+
+article img{
+    border-radius: 1em;
+    display: flex;
+    justify-self: center;
+}
+
+
+.infoBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 300px;
+    justify-self: center;
+    column-gap: 1em;
+}
+
+
+.filmData{
+    display: flex;
+    gap: 2em;
+}
+
+
+
+/********************* Footer ************************/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f6f8;
+    text-align: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+footer p{
+    margin: 0px;
+}
+
+
+/**************** Media Query ************************/
+
+
+@media (max-width: 787px){
+    body{
+        /* Prevent horizontal scrolling that animation can cause */
+        overflow-x: hidden;
+    }
+
+
+    #burger-menu{
+        display: block;
+    }
+
+    #nav-ul{
+        flex-direction: column;
+        position: absolute;
+        background-color: #ffffff;
+        border-radius: 1em;
+        padding: 1em;
+        box-shadow: 0 4px 6px #00000080;
+        animation-fill-mode: forwards;
+        z-index: 1;
+        top: 12vh;
+        right: 2vw;
+    }
+
+    .slide-in{
+        animation: slide-in 1s;
+    }
+
+    .slide-out{
+        animation: slide-in 1s reverse
+    }
+
+    .filmData{
+        display: block;
+    }
+
+}

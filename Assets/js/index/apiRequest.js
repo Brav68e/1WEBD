@@ -1,7 +1,7 @@
 // Get and display all the trend films using axios
 
 
-// A function that load 4 predetermine films 
+// A function that load predetermine films 
 export async function loadFilms(films){
 
     let results = [];
