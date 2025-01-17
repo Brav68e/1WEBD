@@ -1,0 +1,185 @@
+body{
+    margin: 0px;
+    background-color: #212121;
+    font-family: "Nixie";
+}
+
+@font-face {
+    font-family: Nixie;
+    src: url(/Assets/police/NixieOne-Regular.ttf);
+  }
+
+/*********************** Header **********************/
+
+header{
+    background-color: #f1f6f8;
+    padding: 2em;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 2em;
+    height: 10vh;
+    box-shadow: -4px 4px 4px #00000080;
+}
+
+nav img{
+    max-width: 40vw;
+    max-height: 10vh;
+}
+
+nav a{
+    color: black;
+    /* Trick : set a transparent underline that appear progressivly on focus*/
+    text-decoration: underline 0.05em #00000000;
+    transition: all 1s;
+    font-size: 2em;
+    padding: 0.2em;
+    border-radius: 1em;
+}
+
+nav a:hover, nav a:focus{
+    background-color: #d6dde0;
+    color: #d32f2f;
+}
+
+#nav-ul{
+    display: flex;
+    gap: 10vw;
+    list-style-type: none;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+
+
+#burger-menu {
+    font-size: 2em;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@keyframes slide-in{
+    0%{
+        transform: translateX(110%);
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
+
+/********************* Search Bar ************************/
+
+#searchbar{
+    position: relative;
+    display: flex;
+    justify-self: center;
+}
+
+input{
+    width: 80vw;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 2em;
+    font-size: large;
+}
+
+#searchbar label{
+    position: absolute;
+    padding: 0.5em;
+    left: 2.75em;
+    top: 35.5%;
+    font-size: large;
+    transition: all 0.3s;
+    font-weight: bold;
+    cursor: text;
+}
+
+#research:focus + label, input:not(:placeholder-shown) + label{
+    transform: translateY(-100%);
+    background-color: #d6dde0;
+    border-radius: 1em;
+    text-decoration: underline;
+}
+
+input::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder {
+    opacity: 1;
+    color: #555555;
+}
+
+/********************* Main ************************/
+
+main{
+    min-height: 60vh;
+}
+
+
+
+/********************* Footer ************************/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f6f8;
+    text-align: center;
+    gap: 0.25em;
+    padding: 1em;
+}
+
+footer p{
+    margin: 0px;
+}
+
+
+/**************** Media Query ************************/
+
+
+@media (max-width: 787px){
+    body{
+        /* Prevent horizontal scrolling that animation can cause */
+        overflow-x: hidden;
+    }
+
+
+    #burger-menu{
+        display: block;
+    }
+
+    #nav-ul{
+        flex-direction: column;
+        position: absolute;
+        background-color: #ffffff;
+        border-radius: 1em;
+        padding: 1em;
+        box-shadow: 0 4px 6px #00000080;
+        animation-fill-mode: forwards;
+        z-index: 1;
+        top: 12vh;
+        right: 2vw;
+    }
+
+    .slide-in{
+        animation: slide-in 1s;
+    }
+
+    .slide-out{
+        animation: slide-in 1s reverse
+    }
+
+    .filmData{
+        display: block;
+    }
+
+}
