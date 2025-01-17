@@ -1,39 +1,67 @@
 // Function for Burger Menu
 
 
-export function burgerAnimation(burger, linkUl){
+export function burgerAnimation(burger, linkUl, window) {
+    let isAnimating = false;
+    const breakpoint = 786;
+        
+    // Reset menu
+    if (window.innerWidth > breakpoint) {
+        linkUl.style.display = 'flex';
+        linkUl.classList.remove('slide-in', 'slide-out');
+    } else if (!linkUl.classList.contains('slide-in')) {
+        // Hide menu if it's not explicitly opened
+        linkUl.style.display = 'none';
+        linkUl.classList.remove('slide-in', 'slide-out');
+    }
+
+
+
+    // Handle burger click
     burger.addEventListener('click', () => {
-        if(linkUl.classList.contains('slide-in')){
-            // replacement of void linkUl.offsetWidth, force the DOM and prevent optimisation
-            requestAnimationFrame(() => {
-                // Remove the old animation class
-                linkUl.classList.remove('slide-in');
-                requestAnimationFrame(() => {
-                    linkUl.classList.add('slide-out');
-                    linkUl.addEventListener('animationend', () => {
-                        linkUl.style.display = "none";
-                    }, {once: true});
-                });
-            });
-        } else {
+      if (isAnimating) return; // Prevent animation interruption
+      
+      const isMenuVisible = linkUl.classList.contains('slide-in');
+      
+      // Clean up previous animation classes
+      linkUl.classList.remove('slide-in', 'slide-out');
+      
+      if (isMenuVisible) {
+        requestAnimationFrame(() => {
             linkUl.style.display = "flex";
-            linkUl.classList.remove('slide-out');
+            linkUl.classList.add('slide-out');
+            isAnimating = true;
+            linkUl.addEventListener('animationend', () => {
+                linkUl.style.display = "none";
+                isAnimating = false;
+            }, {once: true})});
+
+      } else {
+        requestAnimationFrame(() => {
+            linkUl.style.display = "flex";
             linkUl.classList.add('slide-in');
-        }
+            isAnimating = true;
+            linkUl.addEventListener('animationend', () => {
+                isAnimating = false;
+            }, {once: true})});
+      }
     });
-}
 
 
-// Fix : nav li not being display if we reduce the screen size and then increase it back
-export function hidden_burger(window, linkUl){
+    
+    // Handle window resize
     window.addEventListener('resize', () => {
-        if(window.innerWidth > 786){
-                linkUl.style.display = "flex"
-            }
-            else{
-                linkUl.style.display = "none"
-                linkUl.classList.remove('slide-in')
-                linkUl.classList.remove('slide-out')
-            }
-        })
+        const breakpoint = 786;
+        
+        // Reset menu
+        if (window.innerWidth > breakpoint) {
+          linkUl.style.display = 'flex';
+          linkUl.classList.remove('slide-in', 'slide-out');
+        } else if (!linkUl.classList.contains('slide-in')) {
+          // Hide menu if it's not explicitly opened
+          linkUl.style.display = 'none';
+          linkUl.classList.remove('slide-in', 'slide-out');
+        }
+      });
 }
+    
