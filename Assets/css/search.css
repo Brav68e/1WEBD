@@ -83,6 +83,12 @@ nav a:hover, nav a:focus{
     justify-self: center;
 }
 
+#searchbar img{
+    position: absolute;
+    top: 32%;
+    right: 5em;
+}
+
 input{
     width: 80vw;
     border-radius: 0.5em;
