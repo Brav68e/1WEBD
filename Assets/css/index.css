@@ -12,7 +12,7 @@ body{
 /*********************** Header **********************/
 
 header{
-    background-color: #f1f6f8;
+    background-color: #d6dde0;
     padding: 2em;
 }
 
@@ -20,7 +20,7 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #f1f6f8;
     border-radius: 2em;
     height: 10vh;
     box-shadow: -4px 4px 4px #00000080;
@@ -92,10 +92,12 @@ article{
     text-align: center;
     padding: 2em;
     max-width: 80vw;
-    background-color: #d32f2f;
+    background: linear-gradient(135deg, rgba(97,34,34,1) 0%, rgba(176,21,21,1) 50%, rgba(97,34,34,1) 100%);
     border-radius: 2em;
     transition: all 0.5s ease-in-out;
 }
+
+
 
 article div+div{
     margin: 1em;
@@ -107,9 +109,12 @@ article img{
 }
 
 
-article a{
+article a, article p, article h2{
     text-decoration: none;
-    color: #000000;
+    color: #d6dde0;
+}
+
+article a{
     font-weight: bold;
 }
 
@@ -130,7 +135,7 @@ section{
 
 #loadMore{
     margin-bottom: 2em;
-    background-color: #f1f6f8;
+    background-color: #d6dde0;
     padding: 1em;
     border-radius: 1em;
     font-size: large;
@@ -169,7 +174,7 @@ footer{
     flex-direction: column;
     background-color: #f1f6f8;
     text-align: center;
-    gap: 1em;
+    gap: 0.25em;
     padding: 1em;
 }
 

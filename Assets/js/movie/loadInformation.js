@@ -9,19 +9,21 @@ export async function loadCard(filmID, container){
     const article = document.createElement('article');
     article.innerHTML = `
         <h1>${result['Title']}</h1>
-        <div>
-            <img src = ${result['Poster']}>
+        <div class = filmData>
             <div>
-                <p>${result['Genre']}</p>
-                <p>${result['Runtime']}</p>
-                <p>⭐${result['Metascore']} Metascore</p>
+                <img src = ${result['Poster']}>
+                <div class = infoBox>
+                    <p>${result['Genre']}</p>
+                    <p>${result['Runtime']}</p>
+                    <p>⭐${result['Metascore']} Metascore</p>
+                </div>
             </div>
-        </div>
-        <div>
-            <h2>Synopsis :</h2>
-            <p>${result['Plot']}</p>
-            <h3>${result['Actors']}</h3>
-            <h3>${result['Director']}</h3>
+            <div>
+                <h2>Synopsis :</h2>
+                <p class = description>${result['Plot']}</p>
+                <h3>Main actors : ${result['Actors']}</h3>
+                <h3>Director : ${result['Director']}</h3>
+            </div>
         </div>
     `
 
