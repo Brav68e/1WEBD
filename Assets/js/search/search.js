@@ -47,7 +47,7 @@ input.addEventListener('keypress', async(event) => {
         // No result case -> Display no results found
         else{
             main.innerHTML = `
-                <p>No results found</p>
+                <p id="error">No results found</p>
             `
         }
     }

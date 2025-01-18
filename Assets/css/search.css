@@ -182,6 +182,10 @@ article:hover, article:has(a:focus){
     transform: translateY(-1em);
 }
 
+#error{
+    color: #d6dde0;
+    font-size: xx-large;
+}
 
 /********************* Footer ************************/
 
