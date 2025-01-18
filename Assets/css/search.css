@@ -129,8 +129,58 @@ input:focus::placeholder {
 
 main{
     min-height: 60vh;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
 }
 
+
+article{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+    width: 80vw;
+    background: linear-gradient(135deg, rgba(97,34,34,1) 0%, rgba(176,21,21,1) 50%, rgba(97,34,34,1) 100%);
+    border-radius: 2em;
+    transition: all 0.5s ease-in-out;
+}
+
+.firstcontainer{
+    width: 20vw;
+}
+
+
+article div+div{
+    margin: 1em;
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+}
+
+article img{
+    border-radius: 1em;
+}
+
+
+article a, article p, article h2{
+    text-decoration: none;
+    color: #d6dde0;
+}
+
+article a{
+    font-weight: bold;
+}
+
+
+article:hover, article:has(a:focus){
+    box-shadow: 1em 1em ;
+    transform: translateY(-1em);
+}
 
 
 /********************* Footer ************************/
@@ -186,6 +236,10 @@ footer p{
 
     .filmData{
         display: block;
+    }
+
+    article{
+        flex-direction: column;
     }
 
 }
