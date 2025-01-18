@@ -36,3 +36,32 @@ export async function display(main, films){
         main.appendChild(article)
     }
 }
+
+
+
+export async function searchbar(main, input) {
+
+    // Do a research
+    let film = input.value;
+    let results = await search(film);
+
+    // Check if there is answer
+    if(results["data"]["Response"] == "True"){
+        main.innerHTML = ""
+        await display(main, results["data"]["Search"])
+        let buttons = document.querySelectorAll("article a");
+        let articles = document.querySelectorAll("article")
+        storeID_onClick(buttons, articles);
+
+        // If there is more data that can be shown, add a button to display more
+        if(results["data"]["totalResults"] > 10){
+            console.log("Show more")
+        }
+    }
+    // No result case -> Display no results found
+    else{
+        main.innerHTML = `
+            <p id="error">No results found</p>
+        `
+    } 
+}
