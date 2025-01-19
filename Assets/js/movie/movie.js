@@ -19,5 +19,7 @@ import { loadCard } from "./loadInformation.js";
 
 const main = document.querySelector('main');
 const id = sessionStorage.getItem('ID');
+const loading = document.querySelector('.loader');
 
-loadCard(id, main);
+await loadCard(id, main);
+loading.style.display = "none";

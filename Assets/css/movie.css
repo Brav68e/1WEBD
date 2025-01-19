@@ -78,6 +78,9 @@ nav a:hover, nav a:focus{
 
 main{
     min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 article{
@@ -122,6 +125,27 @@ article img{
     gap: 2em;
 }
 
+
+.loader{
+    display: flex;
+    justify-self: center;
+    height: 3em;
+    width: 3em;
+    border-right: #f1f6f8 3px dashed;
+    border-top: #f1f6f8 3px dotted;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+    margin-bottom: 2em;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 
 /********************* Footer ************************/
