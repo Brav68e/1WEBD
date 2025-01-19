@@ -188,6 +188,51 @@ article:hover, article:has(a:focus){
     font-size: xx-large;
 }
 
+/********************* Between Main and Footer ************************/
+
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#loadMore{
+    margin-bottom: 2em;
+    background-color: #d6dde0;
+    padding: 1em;
+    border-radius: 1em;
+    font-size: large;
+    transition: all 0.5s;
+}
+
+#loadMore:hover, #loadMore:focus{
+    color: #d32f2f;
+}
+
+.loader{
+    display: flex;
+    justify-self: center;
+    height: 3em;
+    width: 3em;
+    border-right: #f1f6f8 3px dashed;
+    border-top: #f1f6f8 3px dotted;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear;
+    margin-bottom: 2em;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
 /********************* Footer ************************/
 
 footer{

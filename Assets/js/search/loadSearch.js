@@ -4,11 +4,13 @@ import { storeID_onClick } from "../general/passerelle.js"
 
 // A function that do a research using title
 
-export async function search(title){
+export async function search(){
 
     try{
         // Get a list of results
-        let results = await axios.get(`https://www.omdbapi.com/?apikey=f69141f9&s=${title}`)
+        let pageIndex = sessionStorage.getItem("pageIndex")
+        let title = sessionStorage.getItem("currentSearch")
+        let results = await axios.get(`https://www.omdbapi.com/?apikey=f69141f9&s=${title}&page=${pageIndex}`)
         return results
     }
     catch(e){
@@ -51,24 +53,47 @@ export async function display(main, films){
 
 export async function searchbar(main, input) {
 
-    // Do a research
+    // Do a research (get the value of the input and put it in session storage)
     let film = input.value;
-    let results = await search(film);
+    sessionStorage.setItem("currentSearch", film)
+    let results = await search();
 
     // Check if there is answer
     if(results["data"]["Response"] == "True"){
-        main.innerHTML = "";
+        main.innerHTML = "";                                // Reset the main since it's a new research
         await display(main, results["data"]["Search"]);
 
-        // If there is more data that can be shown, add a button to display more
-        if(results["data"]["totalResults"] > 10){
-            console.log("Show more");
-        }
+        return 0
     }
     // No result case -> Display no results found
     else{
         main.innerHTML = `
             <p id="error">No results found</p>
         `;
+        return 1
+    } 
+}
+
+
+
+export async function loadMore(main){
+
+    // Incrementation of the current page of research
+    let pageIndex = parseInt(sessionStorage.getItem("pageIndex")) + 1
+    sessionStorage.setItem("pageIndex", pageIndex)
+
+    let results = await search();
+
+    // Check if there is answer
+    if(results["data"]["Response"] == "True"){
+        await display(main, results["data"]["Search"]);
+        return 0
+    }
+    // No result case -> Display no results found
+    else{
+        main.innerHTML += `
+            <p id="error">No results found</p>
+        `;
+        return 1
     } 
 }
