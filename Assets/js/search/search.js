@@ -57,8 +57,14 @@ searchIcon.addEventListener('keypress', async(event) => {
     await interaction(event);
 })
 
-searchIcon.addEventListener('click', async(event) => {
-    await interaction(event);
+searchIcon.addEventListener('click', async() => {
+    loading.style.display = "block";
+        loadButton.style.display = "none";
+        let error = await searchbar(main, input);
+        loading.style.display = "None";
+        if(!error){
+            loadButton.style.display = "block";
+        }
 })
 
 
