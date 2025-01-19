@@ -74,6 +74,15 @@ nav a:hover, nav a:focus{
 }
 
 
+#title{
+    color: #d6dde0;
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration: underline;
+    justify-self: center;
+    padding: 1em;
+}
+
 /********************* Main ************************/
 
 main{
