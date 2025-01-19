@@ -76,11 +76,15 @@ nav a:hover, nav a:focus{
 
 /********************* Main ************************/
 
+main{
+    min-height: 70vh;
+}
+
 article{
     background: linear-gradient(135deg, rgba(97,34,34,1) 0%, rgba(176,21,21,1) 35%, rgba(176,21,21,1) 65%, rgba(97,34,34,1) 100%);
     justify-self: center;
     border-radius: 1em;
-    margin: 0.5em;
+    margin: 1em;
     padding: 1em; 
     font-size: large;
     margin-top: 2em;
@@ -127,7 +131,7 @@ footer{
     flex-direction: column;
     background-color: #f1f6f8;
     text-align: center;
-    gap: 1em;
+    gap: 0.25em;
     padding: 1em;
 }
 
