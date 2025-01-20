@@ -35,7 +35,7 @@ export async function display(main, films){
         </div>
         <div>
             <p>${film['Plot']}</p>
-            <a href="movie.html">En Savoir plus</a>
+            <a href="movie.html">Show More</a>
         </div>
         `
 
