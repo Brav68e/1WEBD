@@ -80,14 +80,15 @@ nav a:hover, nav a:focus{
 #searchbar{
     position: relative;
     display: flex;
-    justify-self: center;
+    justify-content: center;
 }
 
 #searchbar img{
-    position: absolute;
-    top: 32%;
-    right: 5em;
+    position: relative;
+    top: 2.75em;
+    right: 8em;
     cursor: pointer;
+    height: fit-content;
 }
 
 input{
@@ -101,7 +102,7 @@ input{
 #searchbar label{
     position: absolute;
     padding: 0.5em;
-    left: 2.75em;
+    left: 10vw;
     top: 35.5%;
     font-size: large;
     transition: all 0.3s;

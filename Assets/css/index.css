@@ -79,7 +79,7 @@ nav a:hover, nav a:focus{
     font-size: x-large;
     font-weight: bold;
     text-decoration: underline;
-    justify-self: center;
+    text-align: center;
     padding: 1em;
 }
 

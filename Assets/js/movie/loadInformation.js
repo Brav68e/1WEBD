@@ -11,7 +11,7 @@ export async function loadCard(filmID, container){
         <h1>${result['Title']}</h1>
         <div class = filmData>
             <div>
-                <img src = ${result['Poster']}>
+                <img alt = ${result['Title']} src = ${result['Poster']}>
                 <div class = infoBox>
                     <p>${result['Genre']}</p>
                     <p>${result['Runtime']}</p>
