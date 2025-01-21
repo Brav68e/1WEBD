@@ -25,6 +25,8 @@ export function burgerAnimation(burger, linkUl, window) {
       
       // Clean up previous animation classes
       linkUl.classList.remove('slide-in', 'slide-out');
+      // Force a reflow to ensure animations work consistently
+      void linkUl.offsetWidth;
       
       if (isMenuVisible) {
         requestAnimationFrame(() => {
